@@ -13,7 +13,11 @@ spring:
         enabled: true
         lowerCaseServiceId: true
     routes:
-      - id: users
-        uri: lb://PHOTOAPPAPI-USERS
-        predicates:
-          - Path=/users/**
+    - id: users
+      uri: lb://PHOTOAPPAPI-USERS
+      predicates:
+        - Path=/users/**
+    - id: albums
+      uri: lb://PHOTOAPPAPI-ALBUMS
+      predicates:
+        - Path=/albums/**
