@@ -1,4 +1,4 @@
-namespace dotnet_eureka;
+namespace dotnet;
 
 public class WeatherForecast
 {

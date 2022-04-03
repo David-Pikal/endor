@@ -12,6 +12,9 @@ spring:
       locator:
         enabled: true
         lowerCaseServiceId: true
+      httpclient:
+        ssl:
+          useInsecureTrustManager: true
     routes:
     - id: users
       uri: lb://PHOTOAPPAPI-USERS
@@ -21,3 +24,7 @@ spring:
       uri: lb://PHOTOAPPAPI-ALBUMS
       predicates:
         - Path=/albums/**
+    - id: dotnet
+      uri: lb://TransactionHistoryService
+      predicates:
+          - Path=/weatherforecast/**

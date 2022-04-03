@@ -1,3 +1,5 @@
+using Steeltoe.Discovery.Client;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,8 +8,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// TODO - this added
-builder.Services.AddDiscoveryClient(Configuration);
+
+builder.Services.AddDiscoveryClient(builder.Configuration);
 
 var app = builder.Build();
 
@@ -23,7 +25,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseDiscoveryClient();
 
 app.Run();
