@@ -1,0 +1,8 @@
+create dotnet certificate
+./ubuntu-create-dotnet-devcert.sh -s
+
+import certificate to java keystore
+keytool -import -alias dotnet -keystore $JAVA_HOME/lib/security/cacerts -file dotnet-devcert.crt 
+
+$JAVA_HOME not env variable
+keytool -import -alias dotnet -keystore /usr/lib/jvm/java-17-openjdk-amd64/lib/security/cacerts -file dotnet-devcert.crt
