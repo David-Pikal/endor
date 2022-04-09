@@ -10,6 +10,7 @@ okta:
     client-secret: lU9hWly4yXWhOeY2JA444U_IubgqSzzDT0hXNp_l
     client-id: 0oa4m4zmhxMRfGz1i5d7
     issuer: https://dev-54064931.okta.com/oauth2/default
+    redirect-uri: /login/oauth2/code/okta
 spring:
   application:
     name: ApiGateway
