@@ -5,6 +5,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+hystrix:
+  shareSecurityContext: true
+feign:
+  hystrix:
+    enabled: true
 okta:
   oauth2:
     client-secret: lU9hWly4yXWhOeY2JA444U_IubgqSzzDT0hXNp_l
